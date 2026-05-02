@@ -31,7 +31,7 @@ export default function ArtistCard({
             src={image}
             alt={name}
             fill
-            className="w-full aspect-square object-cover rounded-t-xl"
+            className="w-full aspect-square object-cover rounded-t-xl"w
           />
         </div>
 

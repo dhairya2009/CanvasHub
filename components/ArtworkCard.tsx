@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from 'framer-motion';
 
 export default function ArtworkCard({
-  key,
+  id,
   image,
   title,
   artist,
@@ -13,7 +13,7 @@ export default function ArtworkCard({
   price,
   rating,
 }: {
-  key: number;
+  id: number;
   image: string;
   title: string;
   artist: string;
@@ -45,7 +45,7 @@ export default function ArtworkCard({
           </div>
 
           {/* Hover Overlay Button */}
-          <Link href={`/artwork/${title}`}>
+          <Link href={`/artwork/${id}`}>
             <button className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 text-xs font-medium rounded-full bg-black text-white opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition duration-300">
               Quick View
             </button>

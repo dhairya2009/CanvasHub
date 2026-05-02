@@ -1,12 +1,50 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import ArtistCard from "./ArtistCard";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { supabase } from "@/lib/supabaseClient";
 
 export default function FeaturedArtists() {
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // api calling
+  const [artists, setArtists] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchArtists = async () => {
+      try {
+        setLoading(true);
+        const { data, error: sbError } = await supabase
+          .from("artists")
+          .select("*")
+          .gte("rating", 4.5)
+          .order("name", { ascending: true });
+
+        if (sbError) throw sbError;
+        setArtists(data || []);
+      } catch (err: any) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArtists();
+  }, []);
+
+  if (loading)
+    return (
+      <div className="text-white pt-40 text-center">Loading Artists...</div>
+    );
+  if (error)
+    return <div className="text-white pt-40 text-center">Error: {error}</div>;
+
+  // caling end
 
   const scrollLeft = () => {
     scrollRef.current?.scrollBy({
@@ -21,48 +59,6 @@ export default function FeaturedArtists() {
       behavior: "smooth",
     });
   };
-  const artists = [
-    {
-      id: "aanya-mehta",
-      name: "Aanya Mehta",
-      style: "Watercolor Artist",
-      image: "/artist1.jpg",
-      sold: 120,
-      rating: 4.9,
-    },
-    {
-      id: "rohan-patel",
-      name: "Rohan Patel",
-      style: "Pencil Sketch",
-      image: "/artist2.jpg",
-      sold: 85,
-      rating: 3.9,
-    },
-    {
-      id: "sara-khan",
-      name: "Sara Khan",
-      style: "Digital Illustrator",
-      image: "/artist3.jpg",
-      sold: 210,
-      rating: 4.9,
-    },
-    {
-      id: "vihaan-sharma",
-      name: "Vihaan Sharma",
-      style: "Pastel Artist",
-      image: "/artist4.jpg",
-      sold: 95,
-      rating: 4.3,
-    },
-    {
-      id: "dhairya-agrawal",
-      name: "Dhairya Agrawal",
-      style: "Pastel Artist",
-      image: "/artist5.jpg",
-      sold: 176,
-      rating: 4.5,
-    },
-  ];
 
   return (
     <section className="py-24 px-5 bg-white">
@@ -89,22 +85,21 @@ export default function FeaturedArtists() {
         </motion.div>
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-4  scrollbar-none [ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-7 overflow-x-auto mb-4 py-3 scrollbar-none [ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {artists.map((artist, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 40 }} // Start low and invisible
-              whileInView={{ opacity: 1, y: 0 }} // Animate to position when scrolled into view
+              initial={{ opacity: 0, x: -40 }} // Start low and invisible
+              whileInView={{ opacity: 1, x: 0 }} // Animate to position when scrolled into view
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: "easeIn" }}
             >
               <ArtistCard
-                key={artist.id}
                 id={artist.id}
                 name={artist.name}
                 style={artist.style}
-                image={artist.image}
-                sold={artist.sold}
+                image={artist.image_url} // Is this what your Card uses?
+                sold={artist.sold_count} // Is this what your Card uses?
                 rating={artist.rating}
               />
             </motion.div>

@@ -60,6 +60,7 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }} // Animate to position when scrolled into view
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: "easeIn" }}
+              key={index}
             >
               <details
                 key={index}
