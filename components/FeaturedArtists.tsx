@@ -3,6 +3,7 @@
 import ArtistCard from "./ArtistCard";
 import Link from "next/link";
 import { useRef } from "react";
+import { motion } from 'framer-motion';
 
 export default function FeaturedArtists() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -66,6 +67,12 @@ export default function FeaturedArtists() {
   return (
     <section className="py-24 px-5 bg-white">
       <div className="max-w-7xl mx-auto">
+        <motion.div
+              initial={{ opacity: 0, y: 20 }} // Start low and invisible
+              whileInView={{ opacity: 1, y: 0 }} // Animate to position when scrolled into view
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: "easeIn" }}
+            >
         <div className="flex justify-between items-center mb-10">
           <div>
             <p className="text-blue-400 font-medium text-sm">
@@ -79,21 +86,28 @@ export default function FeaturedArtists() {
             <Link href="/artists">View All</Link>
           </button>
         </div>
-
+</motion.div>
         <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto pb-4  scrollbar-none [ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {artists.map((artist, index) => (
-            <ArtistCard
-              key={artist.id}
-              id={artist.id}
-              name={artist.name}
-              style={artist.style}
-              image={artist.image}
-              sold={artist.sold}
-              rating={artist.rating}
-            />
+            <motion.div
+              initial={{ opacity: 0, y: 40 }} // Start low and invisible
+              whileInView={{ opacity: 1, y: 0 }} // Animate to position when scrolled into view
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: "easeIn" }}
+            >
+              <ArtistCard
+                key={artist.id}
+                id={artist.id}
+                name={artist.name}
+                style={artist.style}
+                image={artist.image}
+                sold={artist.sold}
+                rating={artist.rating}
+              />
+            </motion.div>
           ))}
         </div>
 

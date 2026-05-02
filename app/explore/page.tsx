@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import Header from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ArtworkCard from "@/components/ArtworkCard";
 import FeaturedArtists from "@/components/FeaturedArtists";
+import { motion } from "framer-motion";
 
 function page() {
   const artworks = [
@@ -465,30 +468,42 @@ function page() {
       <Header />
       <div className="bg-gradient-to-b from-blue-300 to-white absolute w-full h-screen -z-50"></div>
       <section className="py-36 px-8 z-50">
-        <div className="flex justify-between">
-          <div className="flex gap-3 items-center ml-2">
-            <button className="px-4 py-2 hover:border-transparent rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
-              All
-            </button>
-            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
-              Watercolour
-            </button>
-            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
-              Pencil
-            </button>
-            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
-              Abstract
-            </button>
-            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
-              Pastel
-            </button>
-            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
-              Oil Painting
-            </button>
-          </div>
-          <div className="flex py-5 pr-5 font-medium text-xl justify-end">
-            {artworks.length} Products
-          </div>
+        <div className="flex justify-between py-5">
+          <motion.div
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            <div className="flex gap-3 items-center ml-2">
+              <button className="px-4 py-2 hover:border-transparent rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+                All
+              </button>
+              <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+                Watercolour
+              </button>
+              <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+                Pencil
+              </button>
+              <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+                Abstract
+              </button>
+              <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+                Pastel
+              </button>
+              <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+                Oil Painting
+              </button>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            <div className="flex pr-5 font-medium text-3xl justify-end">
+              {artworks.length} Products
+            </div>
+          </motion.div>
         </div>
         <div className="max-w-8xl mx-auto">
           <div className="columns-1 sm:columns-2 lg:columns-6 gap-6 space-y-6">
