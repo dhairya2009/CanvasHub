@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from "@/components/Navbar" ;
 import Hero from "@/components/Hero" ;
 import Footer from "@/components/Footer" ;
+import FeaturedArtists from '@/components/FeaturedArtists';
 
 
 function page() {
@@ -9,6 +10,7 @@ function page() {
     <div>
       <Navbar/>
       <Hero/>
+      <FeaturedArtists />
       <Footer />
     </div>
   )

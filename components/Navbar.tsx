@@ -13,7 +13,7 @@ function Navbar() {
       className="fixed top-0 left-0 w-full z-50 flex justify-center py-5 px-4"
     >
       <div className="fixed top-0 left-0 w-full z-50 flex justify-center py-5 px-4">
-        <div className="w-full max-w-5xl flex items-center justify-between px-6 py-3 rounded-4xl backdrop-blur-2xl bg-white/55 border border-white/30 shadow-lg shadow-gray-200/50">
+        <div className="w-full max-w-5xl flex items-center justify-between px-6 py-3 rounded-4xl backdrop-blur-2xl bg-white/55 border border-white/30 ">
           {/* Left */}
           <div>
             <Link href="/" className="text-xl font-medium tracking-tight">
@@ -42,7 +42,7 @@ function Navbar() {
           {/* Right */}
           <div className="flex items-center gap-3">
             <button className="px-4 py-2 rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
-              <Link href="/sell">Become Artist</Link> 
+              <Link href="/sell">Become Artist</Link>
             </button>
 
             <button className="px-4 py-2 rounded-full bg-black text-white text-sm hover:opacity-90 transition">

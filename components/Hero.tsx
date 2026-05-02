@@ -9,7 +9,7 @@ function Hero() {
   const [cards, setCards] = useState(["/art1.jpg", "/art2.jpg", "/art3.jpg"]);
   const [artists, setArtists] = useState(0);
   const [artworks, setArtworks] = useState(0);
-  var data = {no_of_artist:440,artworks:1476}
+  var data = { no_of_artist: 440, artworks: 1476 };
 
   useEffect(() => {
     let a = 0;
@@ -37,7 +37,7 @@ function Hero() {
   }, []);
 
   return (
-    <div className="h-500 bg-gradient-to-b from-blue-100 to-white">
+    <div className="bg-gradient-to-b from-blue-300 to-white">
       <section className="min-h-screen pt-50 px-8">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center ">
           <motion.div
