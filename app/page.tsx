@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from "@/components/Navbar" ;
 import Hero from "@/components/Hero" ;
-import Footer from "@/components/Footer" ;
 import FeaturedArtists from '@/components/FeaturedArtists';
-
+import TrendingArtwork from "@/components/TrendingArtwork"
+import Footer from "@/components/Footer" ;
 
 function page() {
   return (
@@ -11,6 +11,7 @@ function page() {
       <Navbar/>
       <Hero/>
       <FeaturedArtists />
+      <TrendingArtwork />
       <Footer />
     </div>
   )

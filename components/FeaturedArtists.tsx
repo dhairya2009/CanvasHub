@@ -64,7 +64,7 @@ export default function FeaturedArtists() {
   ];
 
   return (
-    <section className="py-24 px-8 bg-white">
+    <section className="py-24 px-5 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-10">
           <div>
@@ -75,7 +75,7 @@ export default function FeaturedArtists() {
             <h2 className="text-4xl font-bold mt-2">Featured Artists</h2>
           </div>
 
-          <button className="px-5 py-2 rounded-full border hover:bg-black hover:text-white transition">
+          <button className="px-5 py-2 rounded-full border hover:bg-black hover:text-white transition duration-400">
             <Link href="/artists">View All</Link>
           </button>
         </div>
@@ -100,14 +100,14 @@ export default function FeaturedArtists() {
         <div className="flex gap-3 justify-end pr-5 mt-8">
           <button
             onClick={scrollLeft}
-            className="w-11 h-11 rounded-full border hover:bg-black hover:text-white transition"
+            className="w-11 h-11 rounded-full border hover:bg-black hover:text-white transition duration-400"
           >
             ←
           </button>
 
           <button
             onClick={scrollRight}
-            className="w-11 h-11 rounded-full border hover:bg-black hover:text-white transition"
+            className="w-11 h-11 rounded-full border hover:bg-black hover:text-white transition duration-400"
           >
             →
           </button>

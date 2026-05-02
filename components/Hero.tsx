@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 function Hero() {
-  const [cards, setCards] = useState(["/art1.jpg", "/art2.jpg", "/art3.jpg"]);
+  const [cards, setCards] = useState(["/art11.jpg", "/art6.jpg", "/art9.jpg"]);
   const [artists, setArtists] = useState(0);
   const [artworks, setArtworks] = useState(0);
   var data = { no_of_artist: 440, artworks: 1476 };
