@@ -20,7 +20,7 @@ export default function ArtistCard({
 }: ArtistCardProps) {
   return (
     <Link href={`/artist/${id}`} className="block">
-      <div className="group relative min-w-[280px] bg-white rounded-3xl shadow-md p-4 overflow-hidden transition duration-300 hover:scale-[1.03] hover:shadow-xl">
+      <div className="group relative min-w-[280px] bg-white rounded-3xl shadow-md p-4 overflow-hidden transition duration-300 hover:scale-[1.03] ">
         <div className="absolute top-6 right-6 z-20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition duration-300 bg-black text-white text-xs px-3 py-1 rounded-full">
           ⭐ {rating}
         </div>

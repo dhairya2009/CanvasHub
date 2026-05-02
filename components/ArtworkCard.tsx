@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ArtworkCard({
+  key,
   image,
   title,
   artist,
@@ -8,6 +10,7 @@ export default function ArtworkCard({
   price,
   rating,
 }: {
+  key: number;
   image: string;
   title: string;
   artist: string;
@@ -16,7 +19,7 @@ export default function ArtworkCard({
   rating: number;
 }) {
   return (
-    <div className="group break-inside-avoid bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+    <div className="group break-inside-avoid bg-white rounded-3xl overflow-hidden border-transparent shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
       {/* Image */}
       <div className="relative overflow-hidden">
         <Image
@@ -33,9 +36,11 @@ export default function ArtworkCard({
         </div>
 
         {/* Hover Overlay Button */}
-        <button className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 text-xs font-medium rounded-full bg-black text-white opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition duration-300">
-          Quick View
-        </button>
+        <Link href={`/artwork/${title}`}>
+          <button className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 text-xs font-medium rounded-full bg-black text-white opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition duration-300">
+            Quick View
+          </button>
+        </Link>
       </div>
 
       {/* Content */}

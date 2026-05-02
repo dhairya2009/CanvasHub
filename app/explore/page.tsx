@@ -10,37 +10,37 @@ function page() {
     {
       id: 1,
       image: "/art1.jpg",
-      title: "Ocean Flow",
+      title: "Ganesh Ji",
       artist: "Aanya Mehta",
-      style: "Watercolor",
-      price: "₹2,499",
+      style: "Pencil Portrait",
+      price: "₹4,499",
       rating: 4.8,
     },
     {
       id: 2,
       image: "/art2.jpg",
-      title: "Quiet Eyes",
+      title: "Krishna Ji",
       artist: "Rohan Patel",
-      style: "Pencil Sketch",
-      price: "₹1,899",
+      style: "Pencil Portrait",
+      price: "₹6,899",
       rating: 4.7,
     },
     {
       id: 3,
       image: "/art3.jpg",
-      title: "Color Storm",
+      title: "Deer Portrait",
       artist: "Sara Khan",
-      style: "Abstract",
-      price: "₹3,200",
+      style: "Pencil Portrait",
+      price: "₹5,200",
       rating: 4.9,
     },
     {
       id: 4,
       image: "/art4.jpg",
-      title: "Golden Mood",
+      title: "Horse Art",
       artist: "Vihaan Sharma",
-      style: "Pastel",
-      price: "₹2,100",
+      style: "Golden Mood",
+      price: "₹3,100",
       rating: 4.6,
     },
     {
@@ -465,6 +465,31 @@ function page() {
       <Header />
       <div className="bg-gradient-to-b from-blue-300 to-white absolute w-full h-screen -z-50"></div>
       <section className="py-36 px-8 z-50">
+        <div className="flex justify-between">
+          <div className="flex gap-3 items-center ml-2">
+            <button className="px-4 py-2 hover:border-transparent rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+              All
+            </button>
+            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+              Watercolour
+            </button>
+            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+              Pencil
+            </button>
+            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+              Abstract
+            </button>
+            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+              Pastel
+            </button>
+            <button className="px-4 py-2 hover:border-transparent  rounded-full border text-sm hover:bg-black hover:text-white transition-all duration-400 ease-in-out">
+              Oil Painting
+            </button>
+          </div>
+          <div className="flex py-5 pr-5 font-medium text-xl justify-end">
+            {artworks.length} Products
+          </div>
+        </div>
         <div className="max-w-8xl mx-auto">
           <div className="columns-1 sm:columns-2 lg:columns-6 gap-6 space-y-6">
             {artworks.map((art) => (

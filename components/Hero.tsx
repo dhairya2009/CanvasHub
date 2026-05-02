@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Hero() {
   const [cards, setCards] = useState(["/art11.jpg", "/art6.jpg", "/art9.jpg"]);
@@ -61,9 +62,11 @@ function Hero() {
                 commissions directly from talented independent artists.
               </p>
               <div className="mt-4 flex gap-4">
-                <button className="px-6 py-3 rounded-full bg-black text-white hover:opacity-90 transition">
-                  Explore Art
-                </button>
+                <Link href="/explore">
+                  <button className="px-6 py-3 rounded-full bg-black text-white hover:opacity-90 transition">
+                    Explore Art
+                  </button>
+                </Link>
               </div>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl">
                 <div className="bg-white/55 backdrop-blur-2xl border border-white/30 rounded-2xl px-5 py-4 shadow-md">
