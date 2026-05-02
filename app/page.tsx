@@ -1,9 +1,15 @@
 import React from 'react'
+import Navbar from "@/components/Navbar" ;
+import Hero from "@/components/Hero" ;
+import Footer from "@/components/Footer" ;
+
 
 function page() {
   return (
     <div>
-      Hello World
+      <Navbar/>
+      <Hero/>
+      <Footer />
     </div>
   )
 }
