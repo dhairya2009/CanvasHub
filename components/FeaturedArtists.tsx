@@ -3,7 +3,7 @@
 import ArtistCard from "./ArtistCard";
 import Link from "next/link";
 import { useRef } from "react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function FeaturedArtists() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -68,25 +68,25 @@ export default function FeaturedArtists() {
     <section className="py-24 px-5 bg-white">
       <div className="max-w-7xl mx-auto">
         <motion.div
-              initial={{ opacity: 0, y: 20 }} // Start low and invisible
-              whileInView={{ opacity: 1, y: 0 }} // Animate to position when scrolled into view
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, ease: "easeIn" }}
-            >
-        <div className="flex justify-between items-center mb-10">
-          <div>
-            <p className="text-blue-400 font-medium text-sm">
-              Creative Community
-            </p>
+          initial={{ opacity: 0, y: 20 }} // Start low and invisible
+          whileInView={{ opacity: 1, y: 0 }} // Animate to position when scrolled into view
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeIn" }}
+        >
+          <div className="flex justify-between items-center mb-10">
+            <div>
+              <p className="text-blue-400 font-medium text-sm">
+                Creative Community
+              </p>
 
-            <h2 className="text-4xl font-bold mt-2">Featured Artists</h2>
+              <h2 className="text-4xl font-bold mt-2">Featured Artists</h2>
+            </div>
+
+            <button className="px-5 py-2 rounded-full border hover:bg-black hover:text-white transition duration-400">
+              <Link href="/artists">View All</Link>
+            </button>
           </div>
-
-          <button className="px-5 py-2 rounded-full border hover:bg-black hover:text-white transition duration-400">
-            <Link href="/artists">View All</Link>
-          </button>
-        </div>
-</motion.div>
+        </motion.div>
         <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto pb-4  scrollbar-none [ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"

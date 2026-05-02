@@ -468,8 +468,8 @@ function page() {
       <Header />
       <div className="bg-gradient-to-b from-blue-300 to-white absolute w-full h-screen -z-50"></div>
       <section className="py-36 px-8 z-50">
-        <div className="flex justify-between py-5">
-          <motion.div
+        <div className="flex justify-end py-5">
+          {/* <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -494,7 +494,7 @@ function page() {
                 Oil Painting
               </button>
             </div>
-          </motion.div>
+          </motion.div> */}
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

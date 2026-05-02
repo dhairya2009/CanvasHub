@@ -27,7 +27,12 @@ export default function ArtistCard({
 
         {/* Image */}
         <div className="relative w-full h-56 rounded-2xl overflow-hidden">
-          <Image src={image} alt={name} fill className="object-cover" />
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="w-full aspect-square object-cover rounded-t-xl"
+          />
         </div>
 
         {/* Content */}
