@@ -93,6 +93,7 @@ export default function FeaturedArtists() {
               whileInView={{ opacity: 1, x: 0 }} // Animate to position when scrolled into view
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: "easeIn" }}
+              key={artist.id}
             >
               <ArtistCard
                 id={artist.id}

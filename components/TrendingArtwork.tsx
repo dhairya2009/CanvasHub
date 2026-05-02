@@ -65,6 +65,7 @@ export default function TrendingArtworks() {
         </motion.div>
         <div className="columns-1 sm:columns-2 lg:columns-4 gap-6 space-y-6">
           {artworks.map((art, index) => (
+            <div key={art.id}>
             <ArtworkCard
               id={art.id}
               title={art.title}
@@ -75,6 +76,7 @@ export default function TrendingArtworks() {
               image={art.image_url}
               artist={art.artists?.name || "Unknown Artist"}
             />
+            </div>
           ))}
         </div>
       </div>
