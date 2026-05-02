@@ -98,14 +98,14 @@ export default function TrendingArtworks() {
     <section className="py-24 px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10">
-          <p className="text-blue-600 text-sm font-medium">
+          <p className="text-blue-400 text-sm font-medium">
             Curated Collection
           </p>
 
           <h2 className="text-4xl font-bold mt-2">Trending Artworks</h2>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="columns-1 sm:columns-2 lg:columns-4 gap-6 space-y-6">
           {artworks.map((art) => (
             <ArtworkCard key={art.id} {...art} />
           ))}

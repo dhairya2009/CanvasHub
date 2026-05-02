@@ -68,7 +68,7 @@ export default function FeaturedArtists() {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-10">
           <div>
-            <p className="text-blue-600 font-medium text-sm">
+            <p className="text-blue-400 font-medium text-sm">
               Creative Community
             </p>
 
