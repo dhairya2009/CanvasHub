@@ -48,9 +48,8 @@ function Navbar() {
             <button className="px-4 py-2 rounded-full bg-black text-white text-sm hover:opacity-90 transition">
               <Link href="/cart">Cart</Link>
             </button>
-
-            <button className="text-sm font-medium hover:text-black transition">
-              Login
+            <button className="px-2 py-2 rounded-full border-transparent text-sm">
+              <Link href="/login">Login</Link>
             </button>
           </div>
         </div>

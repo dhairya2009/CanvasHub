@@ -15,6 +15,20 @@ export default function FeaturedArtists() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({
+      left: -320,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({
+      left: 320,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     const fetchArtists = async () => {
       try {
@@ -45,20 +59,6 @@ export default function FeaturedArtists() {
     return <div className="text-white pt-40 text-center">Error: {error}</div>;
 
   // caling end
-
-  const scrollLeft = () => {
-    scrollRef.current?.scrollBy({
-      left: -320,
-      behavior: "smooth",
-    });
-  };
-
-  const scrollRight = () => {
-    scrollRef.current?.scrollBy({
-      left: 320,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <section className="py-24 px-5 bg-white">
