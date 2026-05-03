@@ -10,6 +10,7 @@ export default function TrendingArtworks() {
   const [artworks, setArtworks] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const rating_filt = 4.8
 
   useEffect(() => {
     const fetchArtworks = async () => {
@@ -26,7 +27,7 @@ export default function TrendingArtworks() {
       `,
           )
           // Add this line to filter for ratings strictly greater than 4.6
-          .gt("rating", 4.8)
+          .gt("rating", rating_filt)
           // Or use .gte("rating", 4.6) for 4.6 and above
           .order("rating", { ascending: false }); // Optional: shows highest rated first
 
