@@ -68,8 +68,8 @@ export default function ArtworkPage() {
                 {artwork.artists?.name}
               </h1>
               <p className="text-sm text-cyan-700 hover:text-orange-700 cursor-pointer mt-1">
-                <Link href={`/artist/${artwork.artist_id}`} >
-                Visit the {artwork.artists?.name} Store
+                <Link href={`/artist/${artwork.artist_id}`}>
+                  Visit the {artwork.artists?.name} Store
                 </Link>
               </p>
               <div className="flex items-center gap-2 mt-2">
@@ -84,11 +84,6 @@ export default function ArtworkPage() {
             </section>
 
             <section className="space-y-4">
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm text-gray-500 font-light">Price:</span>
-                <span className="text-2xl text-red-700">{artwork.price}</span>
-              </div>
-
               <div className="text-sm space-y-2">
                 <p>
                   <span className="font-bold">Style:</span> {artwork.style}
