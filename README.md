@@ -7,7 +7,7 @@ A modern art marketplace built with Next.js where artists can showcase and sell 
 - Next.js
 - Tailwind CSS
 - TypeScript
-- Firebase (Planned)
+- SuperBase (Planned)
 
 ## Status
 
