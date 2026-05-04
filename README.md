@@ -1,4 +1,4 @@
-# Art E-Commerce Website
+# CanvasHub
 
 A modern art marketplace built with Next.js where artists can showcase and sell artwork online. Users can explore unique creations, request custom commissions, and buy art supplies.
 
