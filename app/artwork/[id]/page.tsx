@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -26,8 +27,69 @@ export default function ArtworkPage() {
     if (id) fetchArtwork();
   }, [id]);
 
-  if (!artwork)
-    return <div className="pt-40 text-center text-black">Loading...</div>;
+  if (!artwork) {
+    return (
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center">
+        <div className="relative w-24 h-24">
+          {/* Outer Ring - Slow & Steady */}
+          <motion.div
+            className="absolute inset-0 border-[3px] border-gray-100 rounded-full"
+            style={{ borderTopColor: "#3b82f6" }} // Blue accent
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          />
+
+          {/* Middle Ring - Faster & Counter-rotating */}
+          <motion.div
+            className="absolute inset-4 border-[2px] border-gray-50 rounded-full"
+            style={{ borderBottomColor: "#000000" }} // Black accent
+            animate={{ rotate: -360 }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Inner Core - Pulsing Pulse */}
+          <motion.div
+            className="absolute inset-8 bg-gradient-to-tr from-blue-500 to-black rounded-full shadow-lg"
+            animate={{
+              scale: [0.8, 1.1, 0.8],
+              opacity: [0.5, 1, 0.5],
+            }}
+            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+
+        {/* Elegant Typography */}
+        <div className="mt-12 text-center space-y-2">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-sm font-bold tracking-[0.5em] uppercase text-black"
+          >
+            Loading Artwork
+          </motion.h2>
+
+          {/* Animated Loading Dots */}
+          <div className="flex justify-center gap-1">
+            {[0, 1, 2].map((i) => (
+              <motion.div
+                key={i}
+                className="w-1 h-1 bg-blue-500 rounded-full"
+                animate={{ y: [0, -5, 0] }}
+                transition={{
+                  duration: 0.6,
+                  repeat: Infinity,
+                  delay: i * 0.1,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Soft Background Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-50 rounded-full blur-[100px] -z-10" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50/30 selection:bg-yellow-200">

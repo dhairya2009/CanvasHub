@@ -41,41 +41,72 @@ export default function page() {
     return <div className="text-white pt-40 text-center">Error: {error}</div>;
 
   return (
-    <div>
+    <div className="min-h-screen">
       <Header />
+
+      {/* Cinematic Background Gradient */}
       <div className="bg-gradient-to-b from-blue-300 to-white absolute w-full h-screen -z-50"></div>
-      <div className="pt-30 pb-10 z-50">
-        <div className="flex justify-end py-5 max-w-[90%] md:max-w-[85%] lg:max-w-[75%] mx-auto">
+
+      <div className="pt-40 pb-20 z-50">
+        {/* 1. EXPLORE HEADER */}
+        <section className="max-w-7xl mx-auto px-6 mb-16">
           <motion.div
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="flex pr-5 font-medium text-3xl justify-end">
-              {artists.length} Artists
-            </div>
+            <h1 className="text-6xl font-serif italic font-light text-slate-900 leading-tight">
+              Meet the Visionaries
+            </h1>
+            <p className="text-lg text-slate-500 mt-4 max-w-2xl font-serif italic">
+              Connecting you with the world's most provocative digital and
+              traditional creators.
+            </p>
           </motion.div>
-        </div>
-        <div className="max-w-[90%] md:max-w-[85%] lg:max-w-[75%] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          {/* 2. FILTER STRIP (The "Elite" Touch) */}
+          <div className="flex flex-wrap items-center justify-between gap-6 mt-12 pt-8 border-t border-slate-500">
+            <div className="flex gap-3">
+              {["All Artists", "Digital", "Oil", "Sculptors"].map((tab) => (
+                <button
+                  key={tab}
+                  className="px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-black hover:bg-black hover:text-white transition-all duration-300"
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-4">
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">
+                {artists.length} Curated Talents
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. ARTIST GRID */}
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
             {artists.map((artist, index) => (
               <motion.div
                 key={artist.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{
-                  duration: 0.5,
-                  ease: "easeOut",
+                  duration: 0.7,
+                  ease: [0.21, 0.47, 0.32, 0.98], // Custom luxury easing
                   delay: (index % 4) * 0.1,
                 }}
               >
+                {/* Note: Ensure your ArtistCard has been updated to be "Elite" too */}
                 <ArtistCard
                   id={artist.id}
                   name={artist.name}
                   style={artist.style}
-                  image={artist.image_url} // Is this what your Card uses?
-                  sold={artist.sold_count} // Is this what your Card uses?
+                  image={artist.image_url}
+                  sold={artist.sold_count}
                   rating={artist.rating}
                 />
               </motion.div>
@@ -83,6 +114,7 @@ export default function page() {
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
