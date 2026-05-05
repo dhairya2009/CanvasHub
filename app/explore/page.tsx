@@ -44,7 +44,7 @@ function page() {
   return (
     <div>
       <Header />
-      <div className="bg-gradient-to-b from-blue-300 to-white absolute w-full h-screen -z-50"></div>
+      <div className=" absolute w-full h-screen -z-50"></div>
       <section className="py-36 px-8 z-50">
         <div className="flex justify-end py-5">
           <motion.div

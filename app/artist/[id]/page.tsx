@@ -159,7 +159,7 @@ export default function ArtistDetailPage() {
       <Header />
 
       {/* Cinematic Ambient Background */}
-      <div className="bg-gradient-to-b from-blue-300 to-white absolute w-full h-screen -z-50"></div>
+      <div className="absolute w-full h-screen -z-50"></div>
 
       <main className="pt-32 pb-20 z-50">
         {/* ARTIST HERO SECTION */}

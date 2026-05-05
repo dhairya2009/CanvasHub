@@ -45,7 +45,7 @@ export default function page() {
       <Header />
 
       {/* Cinematic Background Gradient */}
-      <div className="bg-gradient-to-b from-blue-300 to-white absolute w-full h-screen -z-50"></div>
+      <div className=" absolute w-full h-screen -z-50"></div>
 
       <div className="pt-40 pb-20 z-50">
         {/* 1. EXPLORE HEADER */}

@@ -85,7 +85,7 @@ export default function SearchPage() {
   }, [artworks, query]);
 
   return (
-    <div className="min-h-screen bg-[#dce9ff]">
+    <div className="min-h-screen ">
       <Navbar />
 
       {/* HERO */}

@@ -38,8 +38,11 @@ function Hero() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-b from-blue-300 to-white">
-      <section className="min-h-screen pt-50 px-8">
+    <div
+      // className="bg-gradient-to-b from-blue-300 to-white"
+      className="bg-[url('/hero-bg.png')] bg-cover bg-center h-screen w-full"
+    >
+      <section className="min-h-screen pt-50 px-8 backdrop-blur-xs">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center ">
           <motion.div
             initial={{ x: -80, opacity: 0 }}

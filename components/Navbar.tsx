@@ -58,7 +58,6 @@ function Navbar() {
             </div>
           </div>
         </motion.header>
-
         {/* Search Circle Separate */}
         <motion.div
           initial={{ y: -80, opacity: 0 }}
